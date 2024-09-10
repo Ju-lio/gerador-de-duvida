@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  list-style: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans',
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: #8a5750;
+  font-weight: 600;
+}
+
+body {
+  background: linear-gradient(#de847c, #fdd8be, #de847c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.frase-container svg {
+  position: absolute;
+  z-index: -1;
+}
+
+.frase-container {
+  height: 300px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.perguntar {
+  background-color: #fbd3ba;
+  border-radius: 10px;
+  border: 1px solid #000;
+  padding: 10px;
+  position: absolute;
+  margin-bottom: 50px;
+  bottom: 0;
+  z-index: 1;
+}
+
+img {
+  /* width: 250px; */
+  height: 250px;
+  /* filter: grayscale(500%) sepia(500%) contrast(0%); */
+}
+
+#frase {
+  font-size: 22px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Media Queries */
+
+/* Para telas menores que 1024px (tablets em paisagem) */
+@media (max-width: 1024px) {
+  .frase-container,
+  .frase-container svg {
+    width: 80%; /* Ajusta a largura da container para 80% da tela */
+    height: auto; /* Ajusta a altura automaticamente */
+  }
+
+  .frase-container h1 {
+    width: 80%;
+  }
+
+  img {
+    height: auto; /* Ajusta a altura da imagem proporcionalmente */
+    width: 100%; /* Faz com que a imagem ocupe toda a largura disponível */
+  }
+
+  #frase {
+    font-size: 18px; /* Reduz o tamanho da fonte */
+  }
+}
+
+/* Para telas menores que 768px (tablets em retrato e smartphones) */
+@media (max-width: 768px) {
+  .frase-container,
+  .frase-container svg {
+    width: 90%; /* Ajusta a largura da container para 90% da tela */
+    height: auto; /* Ajusta a altura automaticamente */
+    padding: 10px; /* Adiciona padding para melhor aparência em dispositivos menores */
+  }
+
+  .frase-container h1 {
+    width: 80%;
+  }
+
+  .perguntar {
+    margin-bottom: 20px; /* Reduz o espaço abaixo do botão */
+    font-size: 14px; /* Ajusta o tamanho da fonte do botão */
+  }
+
+  #frase {
+    font-size: 16px; /* Reduz o tamanho da fonte */
+  }
+}
+
+/* Para telas menores que 480px (smartphones) */
+@media (max-width: 480px) {
+  .frase-container,
+  .frase-container svg {
+    width: 100%; /* Faz com que a container ocupe toda a largura da tela */
+    padding: 5px; /* Reduz o padding para ajustar em telas pequenas */
+  }
+
+  .frase-container h1 {
+    width: 80%;
+  }
+
+  .perguntar {
+    padding: 8px; /* Ajusta o padding do botão */
+    font-size: 12px; /* Ajusta o tamanho da fonte do botão */
+  }
+
+  #frase {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+  }
+
+  img {
+    height: 200px; /* Ajusta a altura da imagem para se adaptar melhor a telas pequenas */
+  }
+}
+
+/* Estilos CSS definidos anteriormente */
+@keyframes tremer {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.tremor {
+  animation: tremer 0.5s; /* Duração de 0.5 segundos */
+}
